@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Student as student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,8 +13,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        // $dataStudent = Student::all();
-        // return view('student', compact('dataStudent'));
+        $dataStudent = Student::with('classroom')->get();
+        return view('student', ['studentList' => $dataStudent]);
+        // dd($dataStudent->class);
+        // dd($dataStudent);
 
         // ============>Query Builder<=============
         // $student = DB::table('students')->get();

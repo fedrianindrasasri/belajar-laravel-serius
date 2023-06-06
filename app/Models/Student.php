@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Classroom;
 
 class Student extends Model
 {
@@ -16,4 +18,10 @@ class Student extends Model
     //public $keyType = 'string'; => Jenis Primary Key
 
     protected $fillable = ['name', 'gender', 'nim', 'class_id'];
+
+    // membuat relasi untuk many to one
+    public function classroom(): BelongsTo
+    {
+        return $this->belongsTo(Classroom::class, 'class_id', 'id');
+    }
 }

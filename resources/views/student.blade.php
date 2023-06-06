@@ -12,16 +12,18 @@
                 <th>Nama Student</th>
                 <th>Jenis Kelamin</th>
                 <th>NIM</th>
+                <th>Kelas</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($dataStudent as $item)
+            @foreach ($studentList as $item)
                 <tr>
 
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->gender }}</td>
                     <td>{{ $item->nim }}</td>
+                    <td>{{ $item->classroom['name'] }}</td>
                 </tr>
             @endforeach
         </tbody>

@@ -12,7 +12,7 @@ class ClassController extends Controller
      */
     public function index()
     {
-        $dataClass = Classroom::all();
+        $dataClass = Classroom::with('student')->get();
         return view('class', compact('dataClass'));
     }
 
