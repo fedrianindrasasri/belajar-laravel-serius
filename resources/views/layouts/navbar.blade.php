@@ -13,6 +13,10 @@
                     <a class="nav-link active" aria-current="page" href="/student">Student</a>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/class">Class</a>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/ekskul">Ekskul</a>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/teacher">Teacher</a>
                 </li>
             </ul>
         </div>

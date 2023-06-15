@@ -3,7 +3,8 @@
 use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
-
+use App\Http\Controllers\ExtracurriculerController;
+use App\Http\Controllers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,7 @@ Route::get('/', function () {
 Route::get('/student', [StudentController::class, 'index']);
 
 Route::get('/class', [ClassController::class, 'index']);
+
+Route::get('/ekskul', [ExtracurriculerController::class, 'index']);
+
+Route::get('/teacher', [TeacherController::class, 'index']);

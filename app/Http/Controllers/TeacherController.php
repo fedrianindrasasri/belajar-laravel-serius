@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classroom;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
-class ClassController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //lazy load
-        // $dataClass = Classroom::get();
-
-        // eager load
-        $dataClass = Classroom::with(['student', 'teacher'])->get();
-        return view('class', compact('dataClass'));
+        $dataTeacher = Teacher::all();
+        return view('teacher', compact('dataTeacher'));
     }
 
     /**

@@ -12,6 +12,7 @@
                 <th>Nama</th>
                 <th>Student</th>
                 <th>Jumlah Murid</th>
+                <th>Teacher</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +22,11 @@
                     <td>{{ $item->name }}</td>
                     <td>
                         @foreach ($item->student as $students)
-                            {{ $students->name }}<br />
+                            - {{ $students->name }}<br />
                         @endforeach
                     </td>
                     <td>{{ count($item->student) }}</td>
+                    <td>{{ $item->teacher->name }}</td>
                 </tr>
             @endforeach
         </tbody>

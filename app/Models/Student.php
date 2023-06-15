@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Classroom;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Student extends Model
 {
@@ -24,4 +25,11 @@ class Student extends Model
     {
         return $this->belongsTo(Classroom::class, 'class_id', 'id');
     }
+
+    public function extracurriculer(): BelongsToMany
+    {
+        return $this->belongsToMany(Extracurriculer::class, 'student_extracurriculers', 'student_id', 'extracurriculer_id');
+    }
+
+   
 }
